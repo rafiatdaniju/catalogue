@@ -15,6 +15,7 @@ Goto -> Plugins -> Add new -> import zip file
 # 🎯 How It Works
 * Activate the "Catalogue Display Panel" Plugin
 * On the admin dashboard select  Catalog Plugin, go to add new, fill out all the information, and save.
+![Add New Catalog](https://file%2B.vscode-resource.vscode-cdn.net/Users/admin/Documents/Catalogue/Catalog%20setup.png?version%3D1739926793361)
 * On the page where you want to display the catalog, insert the "catalogue Display" from blocks and save.
 
 #👨‍💻 Author
