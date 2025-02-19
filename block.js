@@ -3,40 +3,40 @@
     var registerBlockType = wp.blocks.registerBlockType;
     var useSelect = wp.data.useSelect;
 
-    registerBlockType('our-fabric/block', {
-        title: 'Fabric Display',
+    registerBlockType('our-catalogue/block', {
+        title: 'catalogue Display',
         icon: 'slides',
         category: 'widgets',
 
         edit: function () {
-            var fabrics = useSelect(function (select) {
-                return select('core').getEntityRecords('postType', 'fabric', {
+            var catalogues = useSelect(function (select) {
+                return select('core').getEntityRecords('postType', 'catalogue', {
                     per_page: -1,
                 });
             }, []);
 
-            if (!fabrics) {
-                return el('p', {}, 'Loading fabrics...');
+            if (!catalogues) {
+                return el('p', {}, 'Loading catalogues...');
             }
 
-            if (fabrics.length === 0) {
-                return el('p', {}, 'No fabrics found. Please add some fabrics.');
+            if (catalogues.length === 0) {
+                return el('p', {}, 'No catalogues found. Please add some catalogues.');
             }
 
-            var fabricList = fabrics.map(function (fabric) {
+            var catalogueList = catalogues.map(function (catalogue) {
                 return el(
                     'div',
-                    { className: 'fabric-display-item', key: fabric.id },
-                    el('strong', {}, fabric.title.rendered),
+                    { className: 'catalogue-display-item', key: catalogue.id },
+                    el('strong', {}, catalogue.title.rendered),
                     el('img', {
-                        src: fabric.featured_media_url || '', // Use the added field
-                        alt: fabric.title.rendered,
+                        src: catalogue.featured_media_url || '', // Use the added field
+                        alt: catalogue.title.rendered,
                         style: { maxWidth: '100px', margin: '5px 0' },
                     })
                 );
             });
 
-            return el('div', { className: 'our-fabric-editor-block' }, fabricList);
+            return el('div', { className: 'our-catalogue-editor-block' }, catalogueList);
         },
 
         save: function () {

@@ -1,11 +1,11 @@
-.our-fabric {
+.our-catalogue {
     display: flex;
     flex-direction: column;
     
 }
 
 
-.our-fabric {
+.our-catalogue {
     flex-direction: row;
     width: 100%;
     max-width: 1400px;
@@ -16,7 +16,7 @@
 }
 
 
-.fabric-list {
+.catalogue-list {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -24,12 +24,12 @@
     overflow: scroll;
 }
 
-.fabric-image-container{
+.catalogue-image-container{
     flex: 2;
     height: 100%;
 }
 
-.fabric-image {
+.catalogue-image {
     position: relative;
     display: flex;
     justify-content: center;
@@ -37,14 +37,14 @@
     
 }
 
-.fabric-thumbnail-container {
+.catalogue-thumbnail-container {
     position: relative;
     text-align: center;
     width: 100%;
 }
 
 
-.fabric-overlay {
+.catalogue-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,7 +55,7 @@
     
 }
 
-.fabric-item{
+.catalogue-item{
     cursor: pointer;
     font-style: normal;
     line-height: 120%;
@@ -72,7 +72,7 @@
     position: relative;
 }
 
-.fabric-item::before {
+.catalogue-item::before {
     content: "";
     position: absolute;
     top: 150%;
@@ -83,11 +83,11 @@
     background-color: rgb(102, 102, 102)
 }
 
-.fabric-item:hover, .fabric-item.selected {
+.catalogue-item:hover, .catalogue-item.selected {
     color: rgb(102, 102, 102);
 }
 
-.fabric-title {
+.catalogue-title {
     font-weight: 600;
     font-size: 20px;
     line-height: 31px;
@@ -98,7 +98,7 @@
     padding: 0px 1rem;
 }
 
-.fabric-link-button {
+.catalogue-link-button {
     font-weight: 400;
     border: 1px solid white;
     text-decoration: none;
@@ -109,7 +109,7 @@
 
 }
 
-.fabric-link-button:hover {
+.catalogue-link-button:hover {
     opacity: 0.85;
     background-color: white;
     color: rgb(0, 0, 0);
@@ -137,26 +137,26 @@
     display: none;
   }
 
-  .fabric-display-item{
+  .catalogue-display-item{
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 @media (max-width: 768px) {
-    .fabric-list {
-        display: none; /* Hide the fabric list */
+    .catalogue-list {
+        display: none; /* Hide the catalogue list */
     }
-    .fabric-image {
+    .catalogue-image {
         width: 100%;
         overflow: hidden;
     }
 
-    .fabric-thumbnail-container {
+    .catalogue-thumbnail-container {
         display: none;
         width: 100%;
     }
 
-    .fabric-thumbnail-container.active {
+    .catalogue-thumbnail-container.active {
         display: block;
     }
 

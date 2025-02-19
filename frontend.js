@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
         clearSliderInterval();
 
         if(isMobile){
-            var totalSlides = $('.fabric-thumbnail-container').length;
+            var totalSlides = $('.catalogue-thumbnail-container').length;
             var currentSlide = 0;
             
             // Clear existing pagination before creating new ones
@@ -27,16 +27,16 @@ jQuery(document).ready(function ($) {
             }
     
             // Show first slide and activate first bubble
-            $('.fabric-thumbnail-container:first').addClass('active').show();
+            $('.catalogue-thumbnail-container:first').addClass('active').show();
             $('.bubble:first').addClass('active');
     
             // Function to change slide
             function goToSlide(index) {
-                $('.fabric-thumbnail-container').removeClass('active').hide();
+                $('.catalogue-thumbnail-container').removeClass('active').hide();
                 $('.bubble').removeClass('active');
                 
                 currentSlide = index;
-                $('.fabric-thumbnail-container').eq(currentSlide).addClass('active').fadeIn();
+                $('.catalogue-thumbnail-container').eq(currentSlide).addClass('active').fadeIn();
                 $('.bubble').eq(currentSlide).addClass('active');
             }
     
@@ -60,16 +60,16 @@ jQuery(document).ready(function ($) {
             // Touch swipe functionality
             var startX, moveX;
             
-            $('.fabric-image').on('touchstart', function(e) {
+            $('.catalogue-image').on('touchstart', function(e) {
                 clearSliderInterval();
                 startX = e.touches[0].clientX;
             });
     
-            $('.fabric-image').on('touchmove', function(e) {
+            $('.catalogue-image').on('touchmove', function(e) {
                 moveX = e.touches[0].clientX;
             });
     
-            $('.fabric-image').on('touchend', function() {
+            $('.catalogue-image').on('touchend', function() {
                 if (startX && moveX) {
                     var diff = startX - moveX;
                     if (Math.abs(diff) > 50) {
@@ -103,25 +103,25 @@ jQuery(document).ready(function ($) {
             $('.bubble-pagination').empty();
             
             // Desktop behavior
-            $('.fabric-item').first().addClass('selected');
+            $('.catalogue-item').first().addClass('selected');
             
             function selectedItems(event) {
-                const fabricId = $(this).data('fabric-id');
+                const catalogueId = $(this).data('catalogue-id');
 
                 // Hide all thumbnails and overlays
-                $('.fabric-thumbnail-container').hide();
+                $('.catalogue-thumbnail-container').hide();
 
                 // add selected to only clicked items
-                $(".fabric-item").removeClass("selected");
+                $(".catalogue-item").removeClass("selected");
                 $(this).addClass("selected");
-                // Show the selected fabric's thumbnail and overlay
-                $(`.fabric-thumbnail-container[data-fabric-id="${fabricId}"]`).show();
+                // Show the selected catalogue's thumbnail and overlay
+                $(`.catalogue-thumbnail-container[data-catalogue-id="${catalogueId}"]`).show();
             }
             
-            $('.fabric-item').on('click mouseenter', selectedItems);
+            $('.catalogue-item').on('click mouseenter', selectedItems);
 
-            // Show the first fabric by default
-            $('.fabric-thumbnail-container').hide().first().show();
+            // Show the first catalogue by default
+            $('.catalogue-thumbnail-container').hide().first().show();
         }
     }
 
